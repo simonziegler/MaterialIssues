@@ -1,0 +1,112 @@
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MaterialIssues</title>
+    <base href="/">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://unpkg.com/material-components-web@7.0.0/dist/material-components-web.css" rel="stylesheet" />
+    <script src="https://unpkg.com/material-components-web@7.0.0/dist/material-components-web.js"></script>
+</head>
+
+<body class="mdc-typography mb-custom-scrollbars">
+    <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__cell--span-4">
+            <h2 class="mb-card__title mdc-typography mdc-typography--headline6">
+                Prefix and Suffix
+            </h2>
+
+            <h3 class="mb-card__subtitle mdc-typography mdc-typography--subtitle2">
+                Prefix and Suffix text applied within fields.
+            </h3>
+
+            <p>
+                <label id="field1" class="mdc-text-field mdc-text-field--filled">
+                    <span class="mdc-text-field__ripple"></span>
+                    <span class="mdc-text-field__affix mdc-text-field__affix--prefix">Pfx</span>
+                    <input class="mdc-text-field__input" type="text" aria-labelledby="label1">
+                    <span class="mdc-floating-label" id="label1">Filled Prefix</span>
+                    <span class="mdc-line-ripple"></span>
+                </label>
+            </p>
+
+            <p>
+                <label id="field2" class="mdc-text-field mdc-text-field--filled">
+                    <span class="mdc-text-field__ripple"></span>
+                    <input class="mdc-text-field__input" type="text" aria-labelledby="label1">
+                    <span class="mdc-text-field__affix mdc-text-field__affix--suffix">Sfx</span>
+                    <span class="mdc-floating-label" id="label2">Filled Suffix</span>
+                    <span class="mdc-line-ripple"></span>
+                </label>
+            </p>
+
+            <p>
+                <label id="field3" class="mdc-text-field mdc-text-field--outlined">
+                    <span class="mdc-text-field__affix mdc-text-field__affix--prefix">Pfx</span>
+                    <input type="text" class="mdc-text-field__input" aria-labelledby="label3">
+                    <span class="mdc-notched-outline">
+                        <span class="mdc-notched-outline__leading"></span>
+                        <span class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="label3">Outlined Prefix</span>
+                        </span>
+                        <span class="mdc-notched-outline__trailing"></span>
+                    </span>
+                </label>
+            </p>
+
+            <p>
+                <label id="field4" class="mdc-text-field mdc-text-field--outlined">
+                    <input type="text" class="mdc-text-field__input" aria-labelledby="label4">
+                    <span class="mdc-text-field__affix mdc-text-field__affix--suffix">Sfx</span>
+                    <span class="mdc-notched-outline">
+                        <span class="mdc-notched-outline__leading"></span>
+                        <span class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="label4">Outlined Suffix</span>
+                        </span>
+                        <span class="mdc-notched-outline__trailing"></span>
+                    </span>
+                </label>
+            </p>
+        </div>
+    </div>
+
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+        // Single Page Apps for GitHub Pages
+        // https://github.com/rafrex/spa-github-pages
+        // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
+        // ----------------------------------------------------------------------
+        // This script checks to see if a redirect is present in the query string
+        // and converts it back into the correct url and adds it to the
+        // browser's history using window.history.replaceState(...),
+        // which won't cause the browser to attempt to load the new url.
+        // When the single page app is loaded further down in this file,
+        // the correct url will be waiting in the browser's history for
+        // the single page app to route accordingly.
+        (function (l) {
+            if (l.search) {
+                var q = {};
+                l.search.slice(1).split('&').forEach(function (v) {
+                    var a = v.split('=');
+                    q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+                });
+                if (q.p !== undefined) {
+                    window.history.replaceState(null, null,
+                        l.pathname.slice(0, -1) + (q.p || '') +
+                        (q.q ? ('?' + q.q) : '') +
+                        l.hash
+                    );
+                }
+            }
+        }(window.location))
+
+        mdc.textField.MDCTextField.attachTo(document.querySelector('#field1'));
+        mdc.textField.MDCTextField.attachTo(document.querySelector('#field2'));
+        mdc.textField.MDCTextField.attachTo(document.querySelector('#field3'));
+        mdc.textField.MDCTextField.attachTo(document.querySelector('#field4'));
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
+
+    </body>
+</html>
